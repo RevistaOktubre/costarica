@@ -1114,7 +1114,7 @@ body {
  /* Fondo con imagen */
   background-image: 
   linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)),
-  url('../img/fondo/fuego.jpg'); /* tu imagen */
+  url('../img/fondo/f66.png'); /* tu imagen */
   background-size: cover;           /* cubre toda la pantalla */
   background-repeat: no-repeat;     /* no se repite */
   background-attachment: fixed;     /* se queda fija al hacer scroll */
