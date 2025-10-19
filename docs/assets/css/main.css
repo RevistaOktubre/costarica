@@ -113,6 +113,8 @@ html {
   color: #f8f9fa;
 }
 
+
+
 /* Animación del gradiente */
 @keyframes revistaGradientShift {
   0%   { background-position: 0% 50%; }
@@ -439,13 +441,29 @@ html {
   background: #ff1a1a;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-  .gs-card {
-    flex: 0 0 80%;
-    max-width: 80%;
+  #gs-slider {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #800000 transparent; /* Firefox: solo el thumb */
+  }
+
+  /* Chrome, Edge, Safari */
+  #gs-slider::-webkit-scrollbar {
+    height: 6px; /* tamaño del scroll */
+  }
+
+  #gs-slider::-webkit-scrollbar-track {
+    background: transparent; /* sin fondo */
+  }
+
+  #gs-slider::-webkit-scrollbar-thumb {
+    background-color: #800000; /* color de la barrita */
+    border-radius: 3px;
   }
 }
+
 
 .gs-arrow {
   position: absolute;
@@ -656,6 +674,21 @@ html {
   }
 }
 
+/* 🔹 Ajuste para que el lightbox no choque con el navbar fijo */
+@media (max-width: 992px) {
+  .lightbox-content {
+    margin-top: 70px; /* deja espacio debajo del navbar */
+    height: calc(95% - 70px); /* ajusta la altura total */
+  }
+}
+
+@media (min-width: 993px) {
+  .lightbox-content {
+    margin-top: 80px; /* también respeta navbar en pantallas grandes */
+    height: calc(90% - 80px);
+  }
+}
+
 /* 🔹 Botón de cerrar (X) */
 .lightbox .cerrar {
   position: absolute;
@@ -692,6 +725,54 @@ html {
 
 .nav.derecha {
   right: 20px;
+}
+
+/* 🔹 BOTÓN CERRAR — versión final visible arriba a la derecha */
+.cerrar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 38px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 3000;
+  display: block;
+  line-height: 1;
+  font-weight: bold;
+  user-select: none;
+}
+
+.cerrar:hover {
+  color: #ff4444;
+  transform: scale(1.1);
+  transition: 0.2s ease;
+}
+
+/* 🔹 Botón cerrar (X) dentro del cuadro rojo - ahora a la izquierda */
+.lightbox-content .cerrar {
+  position: absolute;
+  top: 10px;
+  left: 15px;       /* ⬅️ cambiado: antes era right: 15px */
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 2000;
+  user-select: none;
+  transition: 0.2s ease;
+}
+
+.lightbox-content .cerrar:hover {
+  background: rgba(255, 0, 0, 0.7);
+  transform: scale(1.1);
 }
 
 /*FIN*/
