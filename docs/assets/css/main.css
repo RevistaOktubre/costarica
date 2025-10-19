@@ -775,6 +775,13 @@ html {
   transform: scale(1.1);
 }
 
+/* 🔹 Clase para desactivar scroll del fondo cuando se abre el lightbox */
+.no-scroll {
+  overflow: hidden !important;
+  height: 100vh;
+}
+
+
 /*FIN*/
 .revista-card {
   border: 1px solid #ddd;

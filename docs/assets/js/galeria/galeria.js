@@ -19,6 +19,8 @@ function abrirLightbox(indice) {
   const lightbox = document.getElementById("lightbox");
   const contenido = document.querySelector(".lightbox-content");
 
+  document.body.classList.add('no-scroll');
+
   lightbox.style.display = "flex";
   contenido.style.background = "#222"; // cambiar color dinámicamente
   contenido.style.color = "white";      // cambiar color del texto
@@ -39,6 +41,8 @@ function cambiarImagen(direccion) {
 }
 
 function cerrarLightbox() {
+  document.body.classList.remove('no-scroll');
+
   document.getElementById("lightbox").style.display = "none";
 }
 
@@ -57,3 +61,4 @@ document.addEventListener("keydown", function(e) {
     if (e.key === "Escape") cerrarLightbox();
   }
 });
+
